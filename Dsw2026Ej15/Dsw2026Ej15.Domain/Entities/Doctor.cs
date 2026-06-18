@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Dsw2026Ej15.Domain.Entities
 {
-    internal class Doctor : BaseEntity
+    public class Doctor : BaseEntity
     {
         public string Name { get; init; }
         public string LicenseNumber { get; init; }

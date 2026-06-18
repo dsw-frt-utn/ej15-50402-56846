@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Dsw2026Ej15.Domain.Entities
 {
-    internal class Speciality : BaseEntity
+    public class Speciality : BaseEntity
     {
         public string Name { get; init; }
         public string Description { get; init; }
