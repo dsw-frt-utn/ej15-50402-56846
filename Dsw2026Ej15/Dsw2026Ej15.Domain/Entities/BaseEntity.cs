@@ -8,9 +8,9 @@ namespace Dsw2026Ej15.Domain.Entities
     {
         public Guid Id { get; init; }
 
-        protected BaseEntity(Guid? Id = null)
+        protected BaseEntity(Guid? id = null)
         {
-            Id = Id ?? Guid.NewGuid();
+            Id = id ?? Guid.NewGuid();
         }
     }
 }

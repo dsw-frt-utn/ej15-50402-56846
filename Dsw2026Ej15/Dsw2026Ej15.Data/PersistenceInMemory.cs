@@ -18,6 +18,11 @@ namespace Dsw2026Ej15.Data
             LoadSpecialities();
         }
 
+        public Speciality? GetSpecialityById(Guid id)
+        {
+            return _specialities.SingleOrDefault(e => e.Id == id);
+        }
+
         private void LoadSpecialities()
         {
             try
@@ -28,13 +33,13 @@ namespace Dsw2026Ej15.Data
                         new JsonSerializerOptions()
                         {
                             PropertyNameCaseInsensitive = true
-                        }
-                    ) ?? [];
+                        }) ?? [];
+
                 _specialities = [.. specialities.Select(s => new Speciality(s.Name, s.Description, s.Id))];
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                Console.WriteLine($"Error: {ex.Message}");
             }
         }
     }
